@@ -11,23 +11,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PDMCVZZ2');</script>
   <!-- End Google Tag Manager -->
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1510743940457232');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1510743940457232&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -263,8 +246,75 @@
     .step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
     .step p { font-size: 0.88rem; color: var(--gray); }
 
+    /* SCHEDULE */
+    .schedule { background: var(--white); }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 660px) {
+      .schedule-grid { grid-template-columns: 1fr; }
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(31,26,46,0.07);
+    }
+    .schedule-table thead th {
+      background: var(--pink);
+      color: var(--white);
+      font-weight: 700;
+      padding: 12px 14px;
+      text-align: left;
+    }
+    .schedule-table thead th:first-child { border-radius: 0; }
+    .schedule-table tbody tr { border-bottom: 1px solid #f0e0ee; }
+    .schedule-table tbody tr:last-child { border-bottom: none; }
+    .schedule-table tbody td {
+      padding: 11px 14px;
+      color: var(--dark);
+      background: var(--white);
+      vertical-align: middle;
+    }
+    .schedule-table tbody td:first-child { font-weight: 700; white-space: nowrap; }
+    .schedule-table tbody td.day { color: var(--gray); font-size: 0.82rem; }
+    .schedule-table tbody .schedule-row--repeat td { background: #fff8e1; color: #92400e; }
+    .schedule-table tbody .schedule-row--exam td { background: #fce4f3; color: var(--pink-dark); }
+    .schedule-table tbody .schedule-row--nalejvak td { background: #ede9fe; color: #6d28d9; }
+    .schedule-note {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--gray);
+      text-align: center;
+      font-style: italic;
+    }
+    .schedule-legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
     /* WHAT'S INCLUDED */
-    .included { background: var(--white); }
+    .included { background: var(--light); }
     .included-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -617,6 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="#" class="nav-brand">@matikahankou</a>
   <div class="nav-links">
     <a href="#how" class="nav-link">Jak to funguje</a>
+    <a href="#harmonogram" class="nav-link">Harmonogram</a>
     <a href="#pricing" class="nav-link">Ceník</a>
     <a href="#recenze" class="nav-link">Recenze</a>
     <a href="#about" class="nav-link">Kdo jsem</a>
@@ -700,6 +751,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Ze složky stáhneš materiály, tahák a mini test k danému tématu.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="harmonogram">
+  <div class="container">
+    <div class="section-label">Harmonogram</div>
+    <h2>Přehled všech streamů</h2>
+    <p class="sub">22. června – 31. srpna 2026 &bull; celkem 24 streamů přes Google Meet<br>Stream cca 1,5–2 h &bull; Nalejvák cca 6 h</p>
+
+    <div class="schedule-grid">
+      <!-- Sloupec 1: červen + červenec -->
+      <table class="schedule-table">
+        <thead>
+          <tr><th>Datum</th><th>Den</th><th>Téma</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>22. 6.</td><td class="day">PO</td><td>Číselné obory</td></tr>
+          <tr><td>25. 6.</td><td class="day">ČT</td><td>Výrazy</td></tr>
+          <tr><td>29. 6.</td><td class="day">PO</td><td>Rovnice a nerovnice</td></tr>
+          <tr><td>2. 7.</td><td class="day">ČT</td><td>Slovní úlohy</td></tr>
+          <tr class="schedule-row--repeat"><td>7. 7.</td><td class="day">ÚT</td><td><strong>🔁 Opakování</strong></td></tr>
+          <tr><td>9. 7.</td><td class="day">ČT</td><td>Funkce I</td></tr>
+          <tr><td>13. 7.</td><td class="day">PO</td><td>Funkce II</td></tr>
+          <tr><td>16. 7.</td><td class="day">ČT</td><td>Posloupnosti</td></tr>
+          <tr><td>20. 7.</td><td class="day">PO</td><td>Finanční matematika</td></tr>
+          <tr class="schedule-row--repeat"><td>23. 7.</td><td class="day">ČT</td><td><strong>🔁 Opakování</strong></td></tr>
+          <tr><td>27. 7.</td><td class="day">PO</td><td>Planimetrie</td></tr>
+          <tr><td>30. 7.</td><td class="day">ČT</td><td>Stereometrie</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Sloupec 2: srpen -->
+      <table class="schedule-table">
+        <thead>
+          <tr><th>Datum</th><th>Den</th><th>Téma</th></tr>
+        </thead>
+        <tbody>
+          <tr class="schedule-row--repeat"><td>3. 8.</td><td class="day">PO</td><td><strong>🔁 Velké opakování</strong></td></tr>
+          <tr><td>6. 8.</td><td class="day">ČT</td><td>Analytická geometrie I</td></tr>
+          <tr><td>10. 8.</td><td class="day">PO</td><td>Analytická geometrie II</td></tr>
+          <tr class="schedule-row--repeat"><td>13. 8.</td><td class="day">ČT</td><td><strong>🔁 Opakování</strong></td></tr>
+          <tr class="schedule-row--exam"><td>16. 8.</td><td class="day">NE</td><td><strong>✏️ Maturita nanečisto</strong></td></tr>
+          <tr><td>17. 8.</td><td class="day">PO</td><td>Kombinatorika</td></tr>
+          <tr><td>20. 8.</td><td class="day">ČT</td><td>Pravděpodobnost</td></tr>
+          <tr class="schedule-row--exam"><td>23. 8.</td><td class="day">NE</td><td><strong>✏️ Maturita nanečisto</strong></td></tr>
+          <tr><td>24. 8.</td><td class="day">PO</td><td>Statistika</td></tr>
+          <tr class="schedule-row--repeat"><td>27. 8.</td><td class="day">ČT</td><td><strong>🔁 Opakování</strong></td></tr>
+          <tr class="schedule-row--exam"><td>29. 8.</td><td class="day">SO</td><td><strong>✏️ Maturita nanečisto</strong></td></tr>
+          <tr class="schedule-row--nalejvak"><td>31. 8.</td><td class="day">PO</td><td><strong>🚀 Velký maturitní nalejvák</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="schedule-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#fef3c7;border:1px solid #d97706;"></div> Opakování</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--pink-light);border:1px solid var(--pink);"></div> Maturita nanečisto</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f3e8ff;border:1px solid #7c3aed;"></div> Velký maturitní nalejvák</div>
+    </div>
+    <p class="schedule-note">* termíny jsou předběžné a mohou se lehce měnit</p>
   </div>
 </section>
 
