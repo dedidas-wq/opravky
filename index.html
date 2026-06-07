@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opravná maturita z matiky – Září 2026 | @matikahankou</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink: #e91e8c;
+      --pink-light: #fce4f3;
+      --pink-dark: #c4157a;
+      --dark: #1a1a2e;
+      --gray: #5a5a6e;
+      --light: #fafafa;
+      --white: #ffffff;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      border-bottom: 1px solid #f0e0ee;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--pink); }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+    }
+    .nav-brand {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--pink);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--pink);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--pink-dark); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 60%, #4a1040 100%);
+      color: var(--white);
+      padding: 80px 24px 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(233,30,140,0.25) 0%, transparent 60%);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(233,30,140,0.25);
+      border: 1px solid rgba(233,30,140,0.5);
+      color: #f9a8d4;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 span { color: var(--pink); }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #c9b8d8;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      position: relative;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-primary {
+      background: var(--pink);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--pink-dark); transform: translateY(-2px); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+    .hero-date {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #9980aa;
+      position: relative;
+    }
+    .hero-date strong { color: #f9a8d4; }
+
+    /* SECTION */
+    section { padding: 72px 24px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      background: var(--pink-light);
+      color: var(--pink);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .sub { color: var(--gray); font-size: 1.05rem; max-width: 600px; }
+
+    /* FOR WHOM – pain style */
+    .for-whom { background: var(--white); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 32px;
+      margin-bottom: 24px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pain-card {
+      background: var(--light);
+      border: 1px solid #ecddf5;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .pain-card__emoji { font-size: 1.75rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+    .pain-card p { font-size: 0.9375rem; color: var(--gray); line-height: 1.6; }
+    .pain-card p strong { color: var(--dark); }
+    .pain-solution {
+      background: var(--pink-light);
+      border: 1.5px solid rgba(233,30,140,0.35);
+      border-radius: 16px;
+      padding: 20px 24px;
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 0 20px rgba(233,30,140,0.15), 0 0 40px rgba(233,30,140,0.06);
+    }
+    .pain-solution p { font-size: 0.9375rem; color: var(--gray); line-height: 1.6; margin: 0; }
+
+    /* HOW IT WORKS */
+    .how { background: var(--light); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 48px; }
+    .step {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      border: 1.5px solid #f0e0ee;
+      position: relative;
+    }
+    .step-num {
+      width: 38px; height: 38px;
+      background: var(--pink);
+      color: var(--white);
+      border-radius: 50%;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 0.88rem; color: var(--gray); }
+
+    /* WHAT'S INCLUDED */
+    .included { background: var(--white); }
+    .included-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .included-img-placeholder {
+      background: #f3e8f7;
+      border: 2px dashed #d9a8e8;
+      border-radius: 20px;
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: #c080d8;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .included-img-placeholder span { font-size: 2.5rem; }
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .include-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--pink-light);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .include-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .include-text { font-size: 0.9rem; font-weight: 600; color: var(--dark); }
+    @media (max-width: 660px) {
+      .included-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* PRICING */
+    .pricing { background: linear-gradient(135deg, #1a1a2e, #2d1b4e); color: var(--white); }
+    .pricing h2 { color: var(--white); }
+    .pricing .sub { color: #9980aa; }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .plan {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      position: relative;
+    }
+    .plan.featured {
+      border-color: var(--pink);
+      background: rgba(233,30,140,0.08);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pink);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .plan-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9980aa; margin-bottom: 12px; }
+    .plan-price { font-size: 2rem; font-weight: 900; margin-bottom: 4px; }
+    .plan-savings { font-size: 0.82rem; color: var(--pink); font-weight: 600; margin-bottom: 24px; }
+    .plan ul { list-style: none; margin-bottom: 28px; }
+    .plan ul li {
+      font-size: 0.9rem;
+      color: #c9b8d8;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      gap: 10px;
+    }
+    .plan ul li::before { content: '✓'; color: var(--pink); font-weight: 700; flex-shrink: 0; }
+    .plan-btn {
+      display: block;
+      text-align: center;
+      background: var(--pink);
+      color: var(--white);
+      padding: 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .plan-btn:hover { background: var(--pink-dark); transform: translateY(-2px); }
+    .plan-btn.outline {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .plan-btn.outline:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .vip-note { font-size: 0.8rem; color: #9980aa; margin-top: 12px; text-align: center; }
+
+    /* WHATSAPP */
+    .community { background: var(--light); }
+    .community-box {
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      border-radius: 20px;
+      padding: 48px 36px;
+      color: var(--white);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .community-icon { font-size: 4rem; }
+    .community-box h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+    .community-box p { opacity: 0.9; font-size: 0.95rem; }
+    @media (max-width: 520px) {
+      .community-box { grid-template-columns: 1fr; text-align: center; }
+      .community-icon { text-align: center; }
+    }
+
+    /* ABOUT */
+    .about { background: var(--white); }
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about__photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(31,26,46,0.1);
+      display: block;
+    }
+    .about__text { font-size: 1.0625rem; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+    .about__stats { display: flex; gap: 40px; margin: 32px 0; }
+    .about__stat-number { font-weight: 900; font-size: 2rem; color: var(--pink); letter-spacing: -0.01em; }
+    .about__stat-label { font-size: 0.8125rem; color: var(--gray); }
+    .about__socials { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .about__social {
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .about__social:hover { border-color: var(--pink); color: var(--pink); background: var(--pink-light); }
+    @media (max-width: 660px) {
+      .about__inner { grid-template-columns: 1fr; gap: 40px; }
+      .about__stats { gap: 24px; }
+      .about__stat-number { font-size: 1.5rem; }
+    }
+
+    /* REVIEWS */
+    .reviews { background: var(--light); }
+    .ig-grid-wrapper {
+      position: relative;
+      max-height: 520px;
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+      margin-top: 48px;
+    }
+    .ig-grid-wrapper.expanded { max-height: 6000px; }
+    .ig-grid-fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background: linear-gradient(to bottom, transparent, var(--light));
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .ig-grid-wrapper.expanded .ig-grid-fade { opacity: 0; }
+    .ig-show-more-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    .ig-show-more-wrap.hidden { display: none; }
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+    .ig-grid__col { display: flex; flex-direction: column; gap: 12px; }
+    .ig-thumb {
+      width: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #f0e0ee;
+      display: block;
+    }
+    .ig-thumb:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(233,30,140,0.12); }
+    .btn-show-more {
+      background: var(--white);
+      border: 2px solid var(--pink);
+      color: var(--pink);
+      padding: 12px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-show-more:hover { background: var(--pink); color: var(--white); }
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox__img { max-width: 90vw; max-height: 90vh; border-radius: 12px; object-fit: contain; }
+    .lightbox__close {
+      position: fixed;
+      top: 20px; right: 24px;
+      background: none; border: none;
+      color: #fff; font-size: 2rem;
+      cursor: pointer; line-height: 1; padding: 8px;
+    }
+    .lightbox__prev, .lightbox__next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none; color: #fff;
+      font-size: 2.5rem; cursor: pointer;
+      padding: 12px 18px; border-radius: 8px;
+      line-height: 1; transition: background 0.2s;
+    }
+    .lightbox__prev:hover, .lightbox__next:hover { background: rgba(255,255,255,0.25); }
+    .lightbox__prev { left: 16px; }
+    .lightbox__next { right: 16px; }
+    @media (max-width: 660px) {
+      .ig-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .ig-grid { grid-template-columns: 1fr; }
+    }
+
+    /* FAQ */
+    .faq { background: var(--white); }
+    .faq__list { max-width: 860px; margin: 48px auto 0; }
+    .faq__item { border-bottom: 1px solid #ecddf5; }
+    .faq__question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--dark);
+      text-align: left;
+    }
+    .faq__question:hover { color: var(--pink); }
+    .faq__icon {
+      font-size: 1.5rem;
+      color: var(--pink);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .faq__item.active .faq__icon { transform: rotate(45deg); }
+    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq__answer p { padding-bottom: 20px; font-size: 0.9375rem; color: var(--gray); line-height: 1.7; }
+    .faq__answer ul { padding-left: 20px; padding-bottom: 20px; }
+    .faq__answer ul li { font-size: 0.9375rem; color: var(--gray); line-height: 1.7; margin-bottom: 6px; }
+
+    /* PAYMENT */
+    .payment { background: var(--light); }
+    .payment-box {
+      background: var(--white);
+      border: 1.5px solid #f0e0ee;
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      margin-top: 40px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .payment-icon { font-size: 2rem; flex-shrink: 0; }
+    .payment-box h3 { font-weight: 700; margin-bottom: 8px; }
+    .payment-box p { font-size: 0.92rem; color: var(--gray); }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, var(--pink) 0%, #c4157a 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .final-cta h2 { color: var(--white); font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .final-cta p { color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 520px; margin: 16px auto 36px; }
+    .final-cta .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--pink);
+      padding: 16px 40px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: transform 0.15s;
+    }
+    .final-cta .btn-white:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #6b6b80;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.88rem;
+    }
+    footer a { color: var(--pink); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">@matikahankou</a>
+  <div class="nav-links">
+    <a href="#how" class="nav-link">Jak to funguje</a>
+    <a href="#pricing" class="nav-link">Ceník</a>
+    <a href="#recenze" class="nav-link">Recenze</a>
+    <a href="#about" class="nav-link">Kdo jsem</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </div>
+  <a href="#pricing" class="nav-cta">Chci se přihlásit</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Opravná maturita z matematiky &bull; Září 2026</div>
+  <h1>Tentokrát maturitu<br><span>zvládneš.</span></h1>
+  <p>Živé streamy, materiály, komunita a Hanka, která ti to opravdu vysvětlí – krok za krokem, bez zbytečného stresu.</p>
+  <div class="hero-btns">
+    <a href="#pricing" class="btn-primary">Vybrat balíček</a>
+    <a href="#how" class="btn-secondary">Jak to funguje?</a>
+  </div>
+  <div class="hero-date">Příprava probíhá <strong>22. června – 31. srpna 2026</strong> formou živých streamů přes Google Meet</div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="for-whom">
+  <div class="container">
+    <div class="section-label">Pro koho</div>
+    <h2>Nech mě <span style="color:var(--pink);">hádat…</span></h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-card__emoji">😓</div>
+        <p><strong>Děláš druhý nebo třetí pokus a tentokrát to nechceš podcenit.</strong> Víš, že příprava je klíčová, ale nevíš, jak na ni správně.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__emoji">😰</div>
+        <p><strong>Matika ti nikdy moc nešla a teď tě čeká opravná maturita.</strong> Strach, že u zkoušky selžeš, tě blokuje a prokrastinace situaci jen zhoršuje.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__emoji">😬</div>
+        <p><strong>Nechceš na to být sám/sama.</strong> Příprava v dobré partě a s někým, kdo odpovídá na dotazy v reálném čase, je prostě jiná kategorie.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__emoji">🥵</div>
+        <p><strong>Nemáš čas hledat si sám materiály a sledovat hodiny videí na YT.</strong> Nevíš, co dřív učit a co je u maturity opravdu důležité.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__emoji">🙋</div>
+        <p><strong>Potřebuješ, aby ti to někdo opravdu vysvětlil.</strong> Matika není o genetice, stačí když ti to někdo konečně vysvětlí, abys to pochopil.</p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:12px;">Poznáváš se?</p>
+    <div class="pain-solution">
+      <div class="pain-card__emoji">✅</div>
+      <p>Pokud ano, nejsi v tom sám! Stejný pocit má většina studentů před opravnou maturitou. Přesně proto vznikla tato příprava – abys to tentokrát zvládl/a.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-label">Jak to funguje</div>
+    <h2>Jednoduchý proces od nákupu po maturitu</h2>
+    <p class="sub">Žádná složitá registrace. Koupíš, dostaneš přístup, přijdeš na stream.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Vyber si balíček</h3>
+        <p>Koupíš celý kurz, jednotlivé streamy, nebo VIP přístup s individuálními lekcemi.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Dostaneš přístup</h3>
+        <p>Odkaz na Google Drive složku ti přijde e-mailem ihned po nákupu.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Připojíš se na stream</h3>
+        <p>Každý stream trvá ~1,5–2 hodiny přes Google Meet. Ptáš se přímo v chatu.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Procvičuješ a opakuješ</h3>
+        <p>Ze složky stáhneš materiály, tahák a mini test k danému tématu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="included">
+  <div class="container">
+    <div class="section-label">Co dostaneš</div>
+    <h2>Ke každému streamu dostaneš složku s:</h2>
+    <div class="included-inner">
+      <img src="img/složka.webp" alt="Složka ke streamu" style="width:100%;border-radius:20px;" />
+      <div class="includes-grid">
+        <div class="include-item">
+          <span class="include-icon">📺</span>
+          <span class="include-text">Odkaz na živé vysílání (Google Meet)</span>
+        </div>
+        <div class="include-item">
+          <span class="include-icon">🎬</span>
+          <span class="include-text">Záznam streamu po skončení</span>
+        </div>
+        <div class="include-item">
+          <span class="include-icon">📄</span>
+          <span class="include-text">Materiály k hodině (k tisku i do tabletu)</span>
+        </div>
+        <div class="include-item">
+          <span class="include-icon">📋</span>
+          <span class="include-text">Tahák k tématu</span>
+        </div>
+        <div class="include-item">
+          <span class="include-icon">✏️</span>
+          <span class="include-text">Mini test s řešením</span>
+        </div>
+        <div class="include-item">
+          <span class="include-icon">💬</span>
+          <span class="include-text">Dotazy přímo v chatu během streamu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-label" style="background:rgba(233,30,140,0.2);color:#f9a8d4;">Balíčky</div>
+    <h2>Vyber si, co ti sedí</h2>
+    <p class="sub">Chceš celý kurz, nebo jen konkrétní témata? Na výběr máš.</p>
+    <div class="plans">
+
+      <!-- Stream -->
+      <div class="plan">
+        <div class="plan-badge" style="background:#6b7280;">179 Kč / stream</div>
+        <div class="plan-name">Jednotlivé streamy</div>
+        <div class="plan-price">179 Kč</div>
+        <div class="plan-savings">Koupíš jen to, co potřebuješ</div>
+        <ul>
+          <li>Přístup k živému vysílání</li>
+          <li>Záznam ve sdílené složce</li>
+          <li>Materiály + řešení</li>
+          <li>Tahák k tématu</li>
+          <li>Mini test s řešením</li>
+          <li>WhatsApp komunita</li>
+        </ul>
+        <a href="https://opravky.matikashankou.cz/" target="_blank" rel="noopener" class="plan-btn outline">Vybrat stream</a>
+        <p class="vip-note">Dostupné vždy 2 streamy dopředu</p>
+      </div>
+
+      <!-- Bundle -->
+      <div class="plan featured">
+        <div class="plan-badge">Nejoblíbenější – ušetříš 836 Kč</div>
+        <div class="plan-name">Zvýhodněný balíček</div>
+        <div class="plan-price">Kompletní kurz</div>
+        <div class="plan-savings">Přístup ke všem 20 streamům + bonusy</div>
+        <ul>
+          <li>Všechny streamy (20 + 4)</li>
+          <li>Záznamy</li>
+          <li>Materiály, taháky a mini testy</li>
+          <li>WhatsApp komunita</li>
+          <li>3× maturita nanečisto (CERMAT formát)</li>
+          <li>Maturitní nalejvák před opravkami</li>
+          <li>Maturitní příručka</li>
+        </ul>
+        <a href="https://opravky.matikashankou.cz/p/balicek" target="_blank" rel="noopener" class="plan-btn">Koupit celý kurz</a>
+      </div>
+
+      <!-- VIP -->
+      <div class="plan">
+        <div class="plan-badge" style="background:#7c3aed;">VIP – pouze 5 míst</div>
+        <div class="plan-name">VIP Opravky</div>
+        <div class="plan-price">Individuální</div>
+        <div class="plan-savings">Vše z balíčku + osobní přístup</div>
+        <ul>
+          <li>Vše z Zvýhodněného balíčku</li>
+          <li>10 individuálních lekcí 1:1 (60 min + 15 min)</li>
+          <li>Individuální plán přípravy</li>
+          <li>Prioritní komunikace (WhatsApp, IG)</li>
+          <li>Vstupní konzultace + testík</li>
+        </ul>
+        <a href="https://opravky.matikashankou.cz/p/VIP" target="_blank" rel="noopener" class="plan-btn">Mám zájem o VIP</a>
+        <p class="vip-note">Podmínka: 80% docházka na společná vysílání (19/24)</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CALL CTA -->
+<section style="background:var(--white);padding:72px 24px;">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,#1a1a2e,#2d1b4e);border-radius:20px;padding:52px 40px;text-align:center;max-width:700px;margin:0 auto;">
+      <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f9a8d4;margin-bottom:12px;">Stále váháš?</p>
+      <h2 style="color:#fff;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px;">Potřebuješ více informací?</h2>
+      <p style="color:#c9b8d8;font-size:1.05rem;max-width:460px;margin:0 auto 32px;">Zarezervuj si se mnou <strong style="color:#fff;">15 minut zdarma</strong> – řekneme si, jestli je příprava pro tebe to pravé.</p>
+      <a href="https://calendly.com/matikashankou/15min" target="_blank" rel="noopener" class="plan-btn" style="display:inline-block;max-width:280px;">
+        📞 Rezervovat call zdarma
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP COMMUNITY -->
+<section class="community">
+  <div class="container">
+    <div class="section-label">Komunita</div>
+    <h2>WhatsApp skupina pro všechny studenty</h2>
+    <p class="sub" style="white-space:nowrap;">Po zakoupení streamu nebo balíčku dostaneš přístup do uzavřené WhatsApp skupiny.</p>
+    <div class="community-box">
+      <div class="community-icon">💬</div>
+      <div>
+        <h3>Ptej se mezi streamy</h3>
+        <p>Zasekneš se při procvičování? Napiš do skupiny. Hanka odpovídá průběžně, většinou do druhého dne. Žádná otázka není hloupá.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__inner">
+      <img src="img/o-me.webp" alt="Hanka – @matikahankou" class="about__photo" />
+      <div>
+        <div class="section-label">Kdo jsem</div>
+        <h2>Ahoj, já jsem <span style="color:var(--pink);">Hanka</span> 👋</h2>
+        <p class="about__text">Možná mě znáš z Instagramu nebo TikToku jako <strong style="color:var(--pink);">@matikahankou</strong>, kde sdílím tipy k maturitě a vysvětlení příkladů.</p>
+        <p class="about__text">Matiku doučuji přes 10 let. Začínala jsem doučovat kamarády na střední, pak na výšce, a dneska pomáhám stovkám studentů pochopit matiku bez zbytečného stresu.</p>
+        <p class="about__text">Pracuji hlavně s lidmi, kterým matika nikdy moc nešla. Právě proto vím, kde se většina zasekne a jak to vysvětlit jednoduše, krok za krokem.</p>
+        <p class="about__text">Věřím, že matika není o talentu. Je to o systému a o tom, mít někoho, kdo ti to vysvětlí lidsky.</p>
+        <div class="about__stats">
+          <div>
+            <div class="about__stat-number">800+</div>
+            <div class="about__stat-label">spokojených studentů</div>
+          </div>
+          <div>
+            <div class="about__stat-number">200+</div>
+            <div class="about__stat-label">hodin online s vámi</div>
+          </div>
+          <div>
+            <div class="about__stat-number">10+</div>
+            <div class="about__stat-label">let zkušeností</div>
+          </div>
+        </div>
+        <div class="about__socials">
+          <a href="https://www.instagram.com/matikahankou/" target="_blank" rel="noopener" class="about__social">Instagram</a>
+          <a href="https://www.tiktok.com/@matikahankou" target="_blank" rel="noopener" class="about__social">TikTok</a>
+          <a href="https://www.youtube.com/@matikahankou" target="_blank" rel="noopener" class="about__social">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="recenze">
+  <div class="container">
+    <div class="section-label">Co říkají studenti</div>
+    <h2>Stovky studentů to zvládly.<br>Tady jsou jejich příběhy.</h2>
+    <div class="ig-grid-wrapper" id="igWrapper">
+      <div class="ig-grid">
+        <div class="ig-grid__col">
+          <img loading="lazy" src="img/recenze/r2.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r1.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r5.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r12.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r8.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r17.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r21.png" class="ig-thumb" alt="Recenze">
+        </div>
+        <div class="ig-grid__col">
+          <img loading="lazy" src="img/recenze/r13.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r3.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r16.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r6.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r18.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r9.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r22.png" class="ig-thumb" alt="Recenze">
+        </div>
+        <div class="ig-grid__col">
+          <img loading="lazy" src="img/recenze/r4.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r19.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r7.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r10.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r20.png" class="ig-thumb" alt="Recenze">
+          <img loading="lazy" src="img/recenze/r11.png" class="ig-thumb" alt="Recenze">
+        </div>
+      </div>
+      <div class="ig-grid-fade"></div>
+    </div>
+    <div class="ig-show-more-wrap" id="igShowWrap">
+      <button class="btn-show-more" id="igBtn">Zobrazit více recenzí</button>
+    </div>
+    <div id="igAllLink" style="display:none;text-align:center;margin-top:24px;">
+      <a href="https://matika-recenze-studentu.vercel.app/" target="_blank" rel="noopener" class="btn-show-more">Všechny recenze najdeš zde →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose">✕</button>
+  <button class="lightbox__prev" id="lightboxPrev">&#8249;</button>
+  <button class="lightbox__next" id="lightboxNext">&#8250;</button>
+  <img class="lightbox__img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Nejčastější otázky</h2>
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <button class="faq__question">1. Kdy příprava začíná a jak dlouho trvá? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Příprava probíhá od <strong>22. června do 31. srpna 2026</strong> formou živých streamů přes Google Meet.</p>
+          <p>Záznamy a materiály zůstávají v Google Drive složce dostupné po celou dobu.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">2. Co dostanu ke každému streamu? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Ke každému streamu dostaneš složku s:</p>
+          <ul>
+            <li><strong>Odkaz na živé vysílání</strong> přes Google Meet</li>
+            <li><strong>Záznam streamu</strong> po skončení</li>
+            <li><strong>Materiály k hodině</strong> – k tisku i do tabletu</li>
+            <li><strong>Tahák k tématu</strong></li>
+            <li><strong>Mini test s řešením</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">3. Jak fungují živé streamy? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Streamy probíhají přes <strong>Google Meet</strong> – nemusíš si nic instalovat, připojíš se přímo v prohlížeči.</p>
+          <p>Každý stream trvá přibližně <strong>1,5–2 hodiny</strong>. Během streamu můžeš psát dotazy přímo do chatu a Hanka na ně odpovídá v reálném čase.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">4. Co když nestihnu živý stream? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Nevadí. Ke každému streamu dostaneš <strong>záznam i materiály</strong>, takže ho můžeš dohnat kdykoliv ti to vyhovuje.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">5. Mohu si koupit jen jedno téma? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Ano. Každý stream lze koupit samostatně, vždy několik dní před jeho konáním. Nemusíš kupovat celý kurz – vezmi jen to, co ti zrovna nejde.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">6. Co je WhatsApp komunita? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Po zakoupení balíčku nebo streamu dostaneš přístup do uzavřené WhatsApp skupiny. Slouží pro dotazy mezi streamy – zasekneš se při procvičování? Napiš tam. Hanka odpovídá průběžně, většinou do druhého dne.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">7. Co mi matika fakt nejde – zvládnu to? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Tahle příprava je přesně pro tebe, protože pracuji hlavně se studenty, kterým matika nikdy moc nešla. Přesně vím, kde se většina zasekne a jak to vysvětlit jednoduše krok za krokem.</p>
+          <p>Z <strong>800+ spokojených studentů</strong> si mnozí mysleli, že na to prostě nemají. A přesto to zvládli.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question">8. Je platba bezpečná? <span class="faq__icon">+</span></button>
+        <div class="faq__answer">
+          <p>Ano. Platba probíhá přes platformu Flixy s platební bránou <strong>Stripe</strong>, kterou používají tisíce e-shopů po celém světě. Tvoje platební údaje jsou v naprostém bezpečí – Hanka ani nikdo jiný je nevidí.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT SAFETY -->
+<section class="payment">
+  <div class="container">
+    <div class="section-label">Bezpečnost platby</div>
+    <h2>Platba je 100% bezpečná</h2>
+    <div class="payment-box">
+      <div class="payment-icon">🔒</div>
+      <div>
+        <h3>Platba přes Stripe – používají ji tisíce e-shopů po celém světě</h3>
+        <p>Platba probíhá přes platformu Flixy s platební bránou Stripe. Tvoje platební údaje jsou v naprostém bezpečí – Hanka ani nikdo jiný je nevidí. Po dokončení nákupu dostaneš odkaz na složku přímo na e-mail i na stránce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Neodkládej to na poslední chvíli.</h2>
+    <p>Září se blíží. Čím dřív začneš, tím lépe se připravíš. Vyber svůj balíček a pojďme na to spolu.</p>
+    <a href="#pricing" class="btn-white">Vybrat balíček</a>
+  </div>
+</section>
+
+<footer>
+  <p>@matikahankou &bull; Opravná maturita z matematiky – Září 2026 &bull; <a href="#">Instagram</a> &bull; <a href="#">TikTok</a></p>
+</footer>
+
+<script>
+  // Lightbox
+  var lightbox    = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var thumbs      = Array.from(document.querySelectorAll('.ig-thumb'));
+  var currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = thumbs[index].src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  thumbs.forEach(function(thumb, i) {
+    thumb.addEventListener('click', function() { openLightbox(i); });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightboxPrev').addEventListener('click', function() {
+    currentIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+    lightboxImg.src = thumbs[currentIndex].src;
+  });
+  document.getElementById('lightboxNext').addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % thumbs.length;
+    lightboxImg.src = thumbs[currentIndex].src;
+  });
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  document.getElementById('lightboxPrev').click();
+    if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+  });
+
+  // Zobrazit více
+  var igBtn = document.getElementById('igBtn');
+  if (igBtn) {
+    igBtn.addEventListener('click', function() {
+      document.getElementById('igWrapper').classList.add('expanded');
+      document.getElementById('igShowWrap').classList.add('hidden');
+      document.getElementById('igAllLink').style.display = 'block';
+    });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq__item').forEach(function(item) {
+    item.querySelector('.faq__question').addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq__item').forEach(function(other) {
+        other.classList.remove('active');
+        other.querySelector('.faq__answer').style.maxHeight = null;
+      });
+      if (!isActive) {
+        item.classList.add('active');
+        item.querySelector('.faq__answer').style.maxHeight =
+          item.querySelector('.faq__answer').scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+</body>
+</html>
