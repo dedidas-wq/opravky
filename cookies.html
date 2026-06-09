@@ -21,7 +21,7 @@
     .legal-page td { padding: 10px 12px; border-bottom: 1px solid var(--c-line); color: var(--c-ink-soft); vertical-align: top; }
     .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--c-primary); font-weight: 600; text-decoration: none; margin-bottom: 40px; }
     .back-link:hover { text-decoration: underline; }
-    .cookie-revoke-btn { display: inline-block; margin-top: 8px; padding: 10px 20px; background: var(--c-primary); color: #fff; border: none; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+    .cookie-revoke-btn { display: inline-block; margin-top: 8px; padding: 10px 20px; background: #e91e8c; color: #fff; border: none; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
     .cookie-revoke-btn:hover { opacity: 0.85; }
   </style>
 </head>
@@ -109,28 +109,40 @@
     <p>Dotazy k cookies zasílejte na <a href="mailto:info@matikashankou.cz">info@matikashankou.cz</a>.</p>
   </div>
 
+  <style>
+    .footer { padding: 32px 24px; background: #1a1a2e; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .footer__inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; align-items: start; padding-bottom: 4px; }
+    .footer__logo { font-weight: 900; font-size: 1.125rem; color: #fff; margin-bottom: 8px; }
+    .footer__logo span { color: #e91e8c; }
+    .footer__bizinfo { font-size: 0.8125rem; color: #6b6b80; line-height: 1.8; }
+    .footer__col { display: flex; flex-direction: column; gap: 8px; }
+    .footer__col-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .footer__col-link { font-size: 0.875rem; color: #6b6b80; text-decoration: none; }
+    .footer__col-link:hover { color: #e91e8c; }
+    .footer__bottom { max-width: 800px; margin: 8px auto 0; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer__copy { font-size: 0.8125rem; color: #6b6b80; }
+    @media (max-width: 600px) { .footer__inner { grid-template-columns: 1fr; gap: 32px; } }
+  </style>
   <footer class="footer">
-    <div class="container">
-      <div class="footer__inner footer__inner--grid">
-        <div class="footer__col footer__col--brand">
-          <div class="footer__logo">Matika s <span>Hankou</span></div>
-          <p class="footer__bizinfo">Haha Krakovská<br>IČO: 21501645<br>Hodonínská 1093/69, 696 01 Rohatec<br>Neplátce DPH</p>
-        </div>
-        <div class="footer__col">
-          <div class="footer__col-title">Kontakt</div>
-          <a href="mailto:info@matikashankou.cz" class="footer__col-link">info@matikashankou.cz</a>
-          <a href="https://www.instagram.com/matikashankou/" target="_blank" rel="noopener" class="footer__col-link">Instagram</a>
-          <a href="https://www.tiktok.com/@matikashankou" target="_blank" rel="noopener" class="footer__col-link">TikTok</a>
-          <a href="https://www.youtube.com/@matikashankou" target="_blank" rel="noopener" class="footer__col-link">YouTube</a>
-        </div>
-        <div class="footer__col">
-          <div class="footer__col-title">Dokumenty</div>
-          <a href="/cookies.html" class="footer__col-link">Zásady cookies</a>
-        </div>
+    <div class="footer__inner">
+      <div class="footer__col">
+        <div class="footer__logo">Matika s <span>Hankou</span></div>
+        <p class="footer__bizinfo">Haha Krakovská<br>IČO: 21501645<br>Hodonínská 1093/69, 696 01 Rohatec<br>Neplátce DPH</p>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 Matika s Hankou. Všechna práva vyhrazena.</p>
+      <div class="footer__col">
+        <div class="footer__col-title">Kontakt</div>
+        <a href="mailto:info@matikashankou.cz" class="footer__col-link">info@matikashankou.cz</a>
+        <a href="https://www.instagram.com/matikashankou/" target="_blank" rel="noopener" class="footer__col-link">Instagram</a>
+        <a href="https://www.tiktok.com/@matikashankou" target="_blank" rel="noopener" class="footer__col-link">TikTok</a>
+        <a href="https://www.youtube.com/@matikashankou" target="_blank" rel="noopener" class="footer__col-link">YouTube</a>
       </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Dokumenty</div>
+        <a href="/cookies.html" class="footer__col-link">Zásady cookies</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Matika s Hankou. Všechna práva vyhrazena.</p>
     </div>
   </footer>
 
