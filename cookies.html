@@ -112,12 +112,12 @@
   <style>
     .footer { padding: 32px 24px; background: #1a1a2e; font-family: 'Segoe UI', system-ui, sans-serif; }
     .footer__inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; align-items: start; padding-bottom: 4px; }
-    .footer__logo { font-weight: 900; font-size: 1.125rem; color: #fff; margin-bottom: 8px; }
+    .footer__logo { font-weight: 700; font-size: 0.875rem; color: #fff; margin: 0; line-height: 1.6; }
     .footer__logo span { color: #e91e8c; }
-    .footer__bizinfo { font-size: 0.8125rem; color: #6b6b80; line-height: 1.8; }
-    .footer__col { display: flex; flex-direction: column; gap: 8px; }
-    .footer__col-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .footer__col-link { font-size: 0.875rem; color: #6b6b80; text-decoration: none; }
+    .footer__bizinfo { font-size: 0.875rem; color: #6b6b80; line-height: 1.6; margin: 0; }
+    .footer__col { display: flex; flex-direction: column; gap: 6px; }
+    .footer__col-title { font-size: 0.875rem; font-weight: 700; color: #fff; margin: 0; line-height: 1.6; }
+    .footer__col-link { font-size: 0.875rem; color: #6b6b80; text-decoration: none; line-height: 1.6; }
     .footer__col-link:hover { color: #e91e8c; }
     .footer__bottom { max-width: 800px; margin: 8px auto 0; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer__copy { font-size: 0.8125rem; color: #6b6b80; }
@@ -127,7 +127,10 @@
     <div class="footer__inner">
       <div class="footer__col">
         <div class="footer__logo">Matika s <span>Hankou</span></div>
-        <p class="footer__bizinfo">Haha Krakovská<br>IČO: 21501645<br>Hodonínská 1093/69, 696 01 Rohatec<br>Neplátce DPH</p>
+        <span class="footer__bizinfo">Haha Krakovská</span>
+        <span class="footer__bizinfo">IČO: 21501645</span>
+        <span class="footer__bizinfo">Hodonínská 1093/69, 696 01 Rohatec</span>
+        <span class="footer__bizinfo">Neplátce DPH</span>
       </div>
       <div class="footer__col">
         <div class="footer__col-title">Kontakt</div>
