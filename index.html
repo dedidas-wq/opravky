@@ -621,6 +621,16 @@
 
     /* ABOUT */
     .about { background: var(--white); }
+    .about-bar { background: var(--pink); padding: 24px 0; }
+    .about-bar__inner { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .about-bar__stat { text-align: center; }
+    .about-bar__num { font-size: 1.75rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .about-bar__label { font-size: 0.8rem; color: rgba(255,255,255,0.85); margin-top: 4px; }
+    .about-bar__divider { width: 1px; height: 40px; background: rgba(255,255,255,0.3); }
+    .about-bar__socials { display: flex; gap: 10px; flex-wrap: wrap; }
+    .about-bar__socials .about__social { border-color: rgba(255,255,255,0.5); color: var(--white); background: transparent; }
+    .about-bar__socials .about__social:hover { background: rgba(255,255,255,0.15); border-color: var(--white); color: var(--white); }
+    @media (max-width: 640px) { .about-bar__divider { display: none; } }
     .about__inner {
       display: grid;
       grid-template-columns: 1fr 1.3fr;
@@ -1244,7 +1254,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-label">Komunita</div>
     <h2>WhatsApp skupina pro všechny studenty</h2>
-    <p class="sub" style="white-space:nowrap;">Po zakoupení streamu nebo balíčku dostaneš přístup do uzavřené WhatsApp skupiny.</p>
+    <p class="sub">Po zakoupení streamu nebo balíčku dostaneš přístup do uzavřené WhatsApp skupiny.</p>
     <div class="community-box">
       <div class="community-icon">💬</div>
       <div>
@@ -1263,30 +1273,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <div class="section-label">Kdo jsem</div>
         <h2>Ahoj, já jsem <span style="color:var(--pink);">Hanka</span> 👋</h2>
-        <p class="about__text">Možná mě znáš z Instagramu nebo TikToku jako <strong style="color:var(--pink);">@matikashankou</strong>, kde sdílím tipy k maturitě a vysvětlení příkladů.</p>
-        <p class="about__text">Matiku doučuji přes 10 let. Začínala jsem doučovat kamarády na střední, pak na výšce, a dneska pomáhám stovkám studentů pochopit matiku bez zbytečného stresu.</p>
-        <p class="about__text">Pracuji hlavně s lidmi, kterým matika nikdy moc nešla. Právě proto vím, kde se většina zasekne a jak to vysvětlit jednoduše, krok za krokem.</p>
-        <p class="about__text">Věřím, že matika není o talentu. Je to o systému a o tom, mít někoho, kdo ti to vysvětlí lidsky.</p>
-        <div class="about__stats">
-          <div>
-            <div class="about__stat-number">800+</div>
-            <div class="about__stat-label">spokojených studentů</div>
-          </div>
-          <div>
-            <div class="about__stat-number">200+</div>
-            <div class="about__stat-label">hodin online s vámi</div>
-          </div>
-          <div>
-            <div class="about__stat-number">10+</div>
-            <div class="about__stat-label">let zkušeností</div>
+        <p class="about__text">Možná mě znáš z Instagramu nebo TikToku jako <strong style="color:var(--pink);">@matikashankou</strong>, kde sdílím tipy k maturitě a jednoduše vysvětluji příklady.</p>
+        <p class="about__text">Už více než <strong>10 let</strong> pomáhám studentům zvládnout matiku bez zbytečného stresu.</p>
+        <p class="about__text">Pomohla více než <strong>800 studentům</strong>, z nichž velká část přicházela s pocitem, že matice nerozumí, nemají na ni hlavu nebo že maturitu nezvládnou.</p>
+        <p class="about__text">A víš co? Strach z matiky často nevzniká proto, že by na ni student neměl. Vzniká proto, že mu ji nikdo nevysvětlil tak, aby mu konečně dávala smysl.</p>
+        <div style="margin:24px 0 20px;">
+          <p style="font-weight:700;color:var(--dark);margin-bottom:14px;">Proč studenti chodí právě za mnou?</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="font-size:0.9375rem;color:var(--dark);">✅ Pracuji hlavně se studenty, kteří s matikou bojují nebo si nevěří</div>
+            <div style="font-size:0.9375rem;color:var(--dark);">✅ Strávila jsem se studenty stovky hodin na online streamech</div>
+            <div style="font-size:0.9375rem;color:var(--dark);">✅ Vysvětluji vše krok za krokem a bez zbytečné teorie</div>
+            <div style="font-size:0.9375rem;color:var(--dark);">✅ Doučuji matiku od základky až po vysokou školu</div>
           </div>
         </div>
-        <div class="about__socials">
-          <a href="https://www.instagram.com/matikashankou/" target="_blank" rel="noopener" class="about__social">Instagram</a>
-          <a href="https://www.tiktok.com/@matikashankou" target="_blank" rel="noopener" class="about__social">TikTok</a>
-          <a href="https://www.youtube.com/@matikashankou" target="_blank" rel="noopener" class="about__social">YouTube</a>
-        </div>
+        <p class="about__text">Mým cílem je, abys šel/šla k maturitě s pocitem:<br><strong>Věřím si. Vím, co dělám. A maturitu zvládnu. 💜</strong></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT BAR -->
+<section class="about-bar">
+  <div class="container about-bar__inner">
+    <div class="about-bar__stat">
+      <div class="about-bar__num">800+</div>
+      <div class="about-bar__label">spokojených studentů</div>
+    </div>
+    <div class="about-bar__divider"></div>
+    <div class="about-bar__stat">
+      <div class="about-bar__num">200+</div>
+      <div class="about-bar__label">hodin online s vámi</div>
+    </div>
+    <div class="about-bar__divider"></div>
+    <div class="about-bar__stat">
+      <div class="about-bar__num">10+</div>
+      <div class="about-bar__label">let zkušeností</div>
+    </div>
+    <div class="about-bar__divider"></div>
+    <div class="about-bar__socials">
+      <a href="https://www.instagram.com/matikashankou/" target="_blank" rel="noopener" class="about__social">Instagram</a>
+      <a href="https://www.tiktok.com/@matikashankou" target="_blank" rel="noopener" class="about__social">TikTok</a>
+      <a href="https://www.youtube.com/@matikashankou" target="_blank" rel="noopener" class="about__social">YouTube</a>
     </div>
   </div>
 </section>
