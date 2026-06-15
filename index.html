@@ -325,9 +325,6 @@
       gap: 12px;
       margin-top: 32px;
       margin-bottom: 24px;
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .pain-card {
       background: var(--light);
@@ -343,22 +340,66 @@
     .pain-card p { font-size: 0.9375rem; color: var(--gray); line-height: 1.6; }
     .pain-card p strong { color: var(--dark); }
     .pain-solution {
-      background: var(--pink-light);
-      border: 1.5px solid rgba(233,30,140,0.35);
+      background: #f3f0ff;
+      border: 1.5px solid #d4c8ff;
       border-radius: 16px;
       padding: 20px 24px;
-      max-width: 860px;
-      margin: 0 auto;
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       gap: 16px;
-      box-shadow: 0 0 20px rgba(233,30,140,0.15), 0 0 40px rgba(233,30,140,0.06);
+      box-shadow: 0 0 20px rgba(139,92,246,0.15), 0 0 40px rgba(139,92,246,0.06);
     }
     .pain-solution p { font-size: 0.9375rem; color: var(--gray); line-height: 1.6; margin: 0; }
 
+    /* DESIRED OUTCOME */
+    .outcome { background: var(--light); }
+    .outcome__intro { font-size: 1.0625rem; color: var(--gray); margin-bottom: 28px; line-height: 1.7; }
+    .outcome__bad { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .outcome__bad-item { font-size: 0.9375rem; color: var(--gray); }
+    .outcome__divider { font-size: 1.125rem; font-weight: 700; color: var(--dark); margin-bottom: 24px; }
+    .outcome__good { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+    .outcome__good-item { font-size: 0.9375rem; color: var(--dark); line-height: 1.5; }
+    .outcome__highlight { background: var(--pink-light); border-left: 3px solid var(--pink); border-radius: 8px; padding: 16px 20px; font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 36px; line-height: 1.5; }
+    .outcome__alone { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 36px; }
+
+    /* WHY FAIL */
+    .why-fail { background: var(--white); }
+    .why-fail h2 { text-align: left; margin-bottom: 8px; }
+    .why-fail .sub { text-align: left; margin-bottom: 40px; }
+    .why-fail__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .why-fail__col { border-radius: 16px; padding: 32px; }
+    .why-fail__col--bad { background: #fff5f5; border: 1px solid #ffd0d0; }
+    .why-fail__col--good { background: #f3f0ff; border: 1px solid #d4c8ff; }
+    .why-fail__item { padding: 10px 0; font-size: 0.9375rem; border-bottom: 1px solid rgba(0,0,0,0.06); line-height: 1.5; }
+    .why-fail__item:last-child { border-bottom: none; }
+    .why-fail__result { margin-top: 24px; background: rgba(255,255,255,0.6); border-radius: 10px; padding: 16px; font-size: 0.9375rem; color: var(--gray); line-height: 1.6; }
+    .why-fail__good-label { font-weight: 700; color: var(--dark); margin-bottom: 16px; font-size: 1rem; }
+    @media (max-width: 640px) { .why-fail__grid { grid-template-columns: 1fr; } }
+
+    /* HOW PREP WORKS */
+    .how-prep { background: var(--light); }
+    .how-prep__intro { font-size: 1rem; color: var(--gray); line-height: 1.8; max-width: 720px; margin-bottom: 40px; }
+    .how-prep__intro p { margin-bottom: 16px; }
+    .how-prep__weekly-label { font-size: 1.125rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; }
+    .how-prep__weekly { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .how-prep__item { background: var(--white); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; border: 1px solid #ececec; }
+    .how-prep__item-icon { font-size: 1.75rem; }
+    .how-prep__item-text { font-size: 0.9rem; color: var(--gray); line-height: 1.5; }
+    .how-prep__time-label { font-size: 1.125rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; }
+    .how-prep__time-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+    .how-prep__time-box { background: var(--pink-light); border-radius: 14px; padding: 24px 20px; text-align: center; }
+    .how-prep__time-box strong { display: block; font-size: 1.5rem; color: var(--pink-dark); margin-bottom: 6px; }
+    .how-prep__time-box span { font-size: 0.875rem; color: var(--gray); }
+    .how-prep__goal { background: #f3f0ff; border: 1.5px solid #d4c8ff; border-radius: 16px; padding: 32px; }
+    .how-prep__goal-label { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .how-prep__goal-sub { font-size: 0.9rem; color: var(--dark); margin-bottom: 20px; }
+    .how-prep__goal-items { display: flex; flex-direction: column; gap: 10px; }
+    .how-prep__goal-item { font-size: 0.9375rem; color: var(--dark); }
+    @media (max-width: 640px) { .how-prep__time-grid { grid-template-columns: 1fr; } }
+
     /* HOW IT WORKS */
-    .how { background: var(--light); }
+    .how { background: var(--white); }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 48px; }
     .step {
       background: var(--white);
@@ -710,7 +751,7 @@
 
     /* FAQ */
     .faq { background: var(--white); }
-    .faq__list { max-width: 860px; margin: 48px auto 0; }
+    .faq__list { margin: 48px 0 0; }
     .faq__item { border-bottom: 1px solid #ecddf5; }
     .faq__question {
       width: 100%;
@@ -800,7 +841,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <a href="#" class="nav-brand">@matikashankou</a>
   <div class="nav-links">
-    <a href="#how" class="nav-link">Jak to funguje</a>
+    <a href="#priprava" class="nav-link">Jak to funguje</a>
     <a href="#harmonogram" class="nav-link">Harmonogram</a>
     <a href="#pricing" class="nav-link">Ceník</a>
     <a href="#recenze" class="nav-link">Recenze</a>
@@ -825,65 +866,165 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FOR WHOM -->
 <section class="for-whom">
   <div class="container">
-    <div class="section-label">Pro koho</div>
+    <div class="section-label">Pro koho je příprava</div>
     <h2>Nech mě <span style="color:var(--pink);">hádat…</span></h2>
     <div class="pain-grid">
       <div class="pain-card">
         <div class="pain-card__emoji">😓</div>
-        <p><strong>Děláš druhý nebo třetí pokus a tentokrát to nechceš podcenit.</strong> Víš, že příprava je klíčová, ale nevíš, jak na ni správně.</p>
+        <p><strong>Děláš druhý nebo třetí pokus a tentokrát to nechceš podcenit.</strong><br>Víš, že příprava je klíčová, ale nevíš, jak na ni správně.</p>
       </div>
       <div class="pain-card">
         <div class="pain-card__emoji">😰</div>
-        <p><strong>Matika ti nikdy moc nešla a teď tě čeká opravná maturita.</strong> Strach, že u zkoušky selžeš, tě blokuje a prokrastinace situaci jen zhoršuje.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-card__emoji">😬</div>
-        <p><strong>Nechceš na to být sám/sama.</strong> Příprava v dobré partě a s někým, kdo odpovídá na dotazy v reálném čase, je prostě jiná kategorie.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-card__emoji">🥵</div>
-        <p><strong>Nemáš čas hledat si sám materiály a sledovat hodiny videí na YT.</strong> Nevíš, co se dřív učit a co je u maturity opravdu důležité.</p>
+        <p><strong>Máš pocit, že ti matika nikdy moc nešla.</strong><br>A teď se bojíš, abys zvládl/a opravný pokus.</p>
       </div>
       <div class="pain-card">
         <div class="pain-card__emoji">🙋</div>
-        <p><strong>Potřebuješ, aby ti to někdo opravdu vysvětlil.</strong> Matika není o genetice, stačí když ti to někdo konečně vysvětlí, abys to pochopil.</p>
+        <p><strong>Nechceš na to být sám/sama.</strong><br>Potřebuješ, aby ti to někdo opravdu vysvětlil, když se zasekneš.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__emoji">🥵</div>
+        <p><strong>Nemáš čas hledat si sám materiály a sledovat hodiny videí na YT.</strong><br>Nevíš, co se dřív učit a co je u maturity opravdu důležité.</p>
       </div>
     </div>
     <p style="text-align:center;font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:12px;">Poznáváš se?</p>
     <div class="pain-solution">
       <div class="pain-card__emoji">✅</div>
-      <p>Pokud ano, nejsi v tom sám! Stejný pocit má většina studentů před opravnou maturitou. Přesně proto vznikla tato příprava – abys to tentokrát zvládl/a.</p>
+      <p><strong>Pokud ano, nejsi v tom sám!</strong> Stejné pocity má většina studentů před opravnou maturitou.<br>Přesně proto vznikla tato příprava, abys to tentokrát zvládl/a.</p>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
+<!-- DESIRED OUTCOME -->
+<section class="outcome">
   <div class="container">
-    <div class="section-label">Jak to funguje</div>
-    <h2>Jednoduchý proces od nákupu po maturitu</h2>
-    <p class="sub">Žádná složitá registrace. Koupíš, dostaneš přístup, přijdeš na stream.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Vyber si balíček</h3>
-        <p>Koupíš celý kurz, jednotlivé streamy, nebo VIP přístup s individuálními lekcemi.</p>
+    <div class="section-label">Za 2 měsíce</div>
+    <h2>Takhle budeš vypadat <span style="color:var(--pink);">za 2 měsíce</span></h2>
+    <div class="why-fail__grid">
+      <div class="why-fail__col why-fail__col--bad">
+        <p class="why-fail__good-label">Místo toho, abys každý den přemýšlel/a:</p>
+        <div class="why-fail__items">
+          <div class="why-fail__item">❌ Co se mám vlastně učit?</div>
+          <div class="why-fail__item">❌ Z jakých materiálů se učit</div>
+          <div class="why-fail__item">❌ Stihnu to vůbec?</div>
+          <div class="why-fail__item">❌ Co když se zaseknu a nebudu vědět, jak dál?</div>
+          <div class="why-fail__item">❌ Co když zase neudělám těch 17 bodů?</div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Dostaneš přístup</h3>
-        <p>Odkaz na Google Drive složku ti přijde e-mailem ihned po nákupu.</p>
+      <div class="why-fail__col why-fail__col--good">
+        <p class="why-fail__good-label">Budeš mít jasno a uvidíš pokrok:</p>
+        <div class="why-fail__items">
+          <div class="why-fail__item">✔ Budeš umět řešit příklady, které se u maturity objevují</div>
+          <div class="why-fail__item">✔ Přestaneš panikařit pokaždé, když otevřeš didaktický test</div>
+          <div class="why-fail__item">✔ Budeš mít za sebou několik maturit nanečisto</div>
+          <div class="why-fail__item">✔ Budeš vědět, kde děláš chyby a jak je opravit</div>
+          <div class="why-fail__item">✔ Půjdeš k opravce s plánem, ne s nadějí</div>
+          <div class="why-fail__item" style="font-weight:700;color:var(--dark);border-bottom:none;margin-top:8px;padding-top:16px;">A hlavně… nebudeš na to sám/sama.</div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Připojíš se na stream</h3>
-        <p>Každý stream trvá ~1,5–2 hodiny přes Google Meet. Ptáš se přímo v chatu.</p>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#pricing" class="btn-primary">Chci mít jasný plán na opravnou maturitu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY STUDENTS FAIL -->
+<section class="why-fail">
+  <div class="container">
+    <div class="section-label">Proč to nevyšlo</div>
+    <h2>Proč někteří studenti maturitu <span style="color:var(--pink);">nezvládli?</span></h2>
+    <p class="sub">Není to tím, že by byli hloupí. Je to tím, jak se připravují.</p>
+    <div class="why-fail__grid">
+      <div class="why-fail__col why-fail__col--bad">
+        <p class="why-fail__good-label">Nejčastější chyby:</p>
+        <div class="why-fail__items">
+          <div class="why-fail__item">❌ Skáčeš mezi tématy bez jasného plánu</div>
+          <div class="why-fail__item">❌ Nevíš, co je u maturity opravdu důležité</div>
+          <div class="why-fail__item">❌ Učíš se sám/sama, bez zpětné vazby</div>
+          <div class="why-fail__item">❌ Zasekneš se na příkladu a nemáš se koho zeptat</div>
+          <div class="why-fail__item">❌ Přípravu odkládáš na poslední chvíli</div>
+          <div class="why-fail__item">❌ Učíš se nazpaměť, aniž bys tomu rozuměl/a</div>
+          <div class="why-fail__item">❌ U didakťáku zmatkuješ a nevíš, co dříve</div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>Procvičuješ a opakuješ</h3>
-        <p>Ze složky stáhneš materiály, tahák a mini test k danému tématu.</p>
+      <div class="why-fail__col why-fail__col--good">
+        <p class="why-fail__good-label">Proto je součástí přípravy:</p>
+        <div class="why-fail__items">
+          <div class="why-fail__item">✔ Jasný plán – víš, co se učit a v jakém pořadí</div>
+          <div class="why-fail__item">✔ Pravidelné živé streamy s Hankou</div>
+          <div class="why-fail__item">✔ Možnost ptát se v reálném čase</div>
+          <div class="why-fail__item">✔ Materiály, taháky a mini testy k procvičení</div>
+          <div class="why-fail__item">✔ Opakování nejčastějších chyb u maturity</div>
+          <div class="why-fail__item">✔ Strategie, jak postupovat u didakťáku krok za krokem</div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW PREP WORKS -->
+<section class="how-prep" id="priprava">
+  <div class="container">
+    <div class="section-label">Jak funguje příprava</div>
+    <h2>Jak bude příprava <span style="color:var(--pink);">probíhat?</span></h2>
+    <div class="how-prep__intro">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+        <li>→ Od <strong>22. června do 31. srpna</strong> projdeme všechna témata krok za krokem</li>
+        <li>→ Témata na sebe navazují, takže nemusíš řešit, co se učit jako první.</li>
+        <li>→ Průběžně opakujeme, aby ti látka zůstala v hlavě až do dne zkoušky.</li>
+        <li>→ Místo chaotického přeskakování mezi videi a materiály dostaneš jasný plán přípravy na celé léto.</li>
+      </ul>
+    </div>
+    <p class="how-prep__weekly-label">Každý týden tě čeká:</p>
+    <div class="how-prep__weekly">
+      <div class="how-prep__item">
+        <div class="how-prep__item-icon">🎥</div>
+        <div class="how-prep__item-text">2× živý stream, kde společně projdeme nové téma krok za krokem</div>
+      </div>
+      <div class="how-prep__item">
+        <div class="how-prep__item-icon">📝</div>
+        <div class="how-prep__item-text">Materiály, které si můžeš vytisknout nebo používat v tabletu</div>
+      </div>
+      <div class="how-prep__item">
+        <div class="how-prep__item-icon">📚</div>
+        <div class="how-prep__item-text">Přehledný tahák k probíranému tématu</div>
+      </div>
+      <div class="how-prep__item">
+        <div class="how-prep__item-icon">✏️</div>
+        <div class="how-prep__item-text">Mini test s řešením, abys viděl/a, jak si vedeš</div>
+      </div>
+      <div class="how-prep__item">
+        <div class="how-prep__item-icon">❓</div>
+        <div class="how-prep__item-text">Možnost zeptat se na cokoliv, čemu nerozumíš</div>
+      </div>
+    </div>
+    <p class="how-prep__time-label">Kolik času ti příprava zabere?</p>
+    <div class="how-prep__time-grid">
+      <div class="how-prep__time-box">
+        <strong>2× týdně</strong>
+        <span>živé streamy vždy od 18:00</span>
+      </div>
+      <div class="how-prep__time-box">
+        <strong>1,5–2 h</strong>
+        <span>délka jednoho streamu</span>
+      </div>
+      <div class="how-prep__time-box">
+        <strong>průběžná příprava</strong>
+        <span>záleží na tobě, kolik času tomu věnuješ</span>
+      </div>
+    </div>
+    <div class="how-prep__goal">
+      <p class="how-prep__goal-sub"><strong>Cílem je, aby ses v září podíval/a na zadání didakťáku a věděl/a:</strong></p>
+      <div class="how-prep__goal-items">
+        <div class="how-prep__goal-item">✔ Jak začít</div>
+        <div class="how-prep__goal-item">✔ Jak postupovat a nepanikařit při příkladech</div>
+        <div class="how-prep__goal-item">✔ Jak pracovat s časem, aby ti zbyl čas na kontrolu</div>
+        <div class="how-prep__goal-item">✔ Kde si dát pozor na nejčastější chyby</div>
+        <div class="how-prep__goal-item">✔ A že na to máš</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#pricing" class="btn-primary">Chci se přihlásit →</a>
     </div>
   </div>
 </section>
@@ -952,7 +1093,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="included">
   <div class="container">
     <div class="section-label">Co dostaneš</div>
-    <h2>Ke streamu dostaneš složku, kde najdeš:</h2>
+    <h2>Ke streamu dostaneš složku, <span style="color:var(--pink);">kde najdeš:</span></h2>
     <div class="included-inner">
       <img src="img/slozka.webp" alt="Složka ke streamu" style="width:100%;border-radius:20px;" />
       <div class="includes-grid">
@@ -980,6 +1121,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="include-icon">💬</span>
           <span class="include-text">Dotazy v chatu během streamu nebo v komunitě</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-label">Jak začít</div>
+    <h2>Jednoduchý proces <span style="color:var(--pink);">od nákupu po maturitu</span></h2>
+    <p class="sub">Žádná složitá registrace. Koupíš, dostaneš přístup, přijdeš na stream.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Vyber si balíček</h3>
+        <p>Koupíš celý kurz, jednotlivé streamy, nebo VIP přístup s individuálními lekcemi.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Dostaneš přístup</h3>
+        <p>Odkaz na Google Drive složku ti přijde e-mailem ihned po nákupu.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Připojíš se na stream</h3>
+        <p>Každý stream trvá ~1,5–2 hodiny přes Google Meet. Ptáš se přímo v chatu.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Procvičuješ a opakuješ</h3>
+        <p>Ze složky stáhneš materiály, tahák a mini test k danému tématu.</p>
       </div>
     </div>
   </div>
@@ -1253,7 +1425,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="payment-box">
       <div class="payment-icon">🔒</div>
       <div>
-        <h3>Platba přes Stripe – používají ji tisíce e-shopů po celém světě</h3>
+        <h3>Platbu přes Stripe používají tisíce e-shopů po celém světě</h3>
         <p>Platba probíhá přes platformu Flixy s platební bránou Stripe. Tvoje platební údaje jsou v naprostém bezpečí – Hanka ani nikdo jiný je nevidí. Po dokončení nákupu dostaneš odkaz na složku přímo na e-mail i na stránce.</p>
       </div>
     </div>
