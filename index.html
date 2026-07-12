@@ -142,13 +142,22 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      analytics_storage:  'denied',
-      ad_storage:         'denied',
-      ad_user_data:       'denied',
-      ad_personalization: 'denied',
-      wait_for_update:    500
-    });
+    (function () {
+      /* Uložený souhlas (msh_consent) se musí aplikovat PŘED GTM,
+         jinak pageview proběhne s 'denied' a tagy se nespustí. */
+      var saved = null;
+      try { saved = JSON.parse(localStorage.getItem('msh_consent')); } catch (e) {}
+      var valid     = saved && saved.v === '2';
+      var analytics = valid && saved.analytics === true;
+      var marketing = valid && saved.marketing === true;
+      gtag('consent', 'default', {
+        analytics_storage:  analytics ? 'granted' : 'denied',
+        ad_storage:         marketing ? 'granted' : 'denied',
+        ad_user_data:       marketing ? 'granted' : 'denied',
+        ad_personalization: marketing ? 'granted' : 'denied',
+        wait_for_update:    500
+      });
+    })();
   </script>
   <!-- End Google Consent Mode v2 -->
   <!-- Google Tag Manager -->
