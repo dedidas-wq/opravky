@@ -120,8 +120,8 @@
       + '</div>'
       + '<div id="cc-details" style="display:none">'
       +   '<label class="cc-check"><input type="checkbox" disabled checked> <span>Nezbytné <em>(vždy aktivní)</em></span></label>'
-      +   '<label class="cc-check"><input type="checkbox" id="cc-chk-analytics" checked> <span>Analytické <em>(Google Analytics)</em></span></label>'
-      +   '<label class="cc-check"><input type="checkbox" id="cc-chk-marketing" checked> <span>Marketingové <em>(Meta Pixel, TikTok Pixel)</em></span></label>'
+      +   '<label class="cc-check"><input type="checkbox" id="cc-chk-analytics"> <span>Analytické <em>(Google Analytics)</em></span></label>'
+      +   '<label class="cc-check"><input type="checkbox" id="cc-chk-marketing"> <span>Marketingové <em>(Meta Pixel, TikTok Pixel)</em></span></label>'
       +   '<button class="cc-btn cc-btn--primary cc-btn--sm" id="cc-btn-save">Uložit nastavení</button>'
       + '</div>'
       + '</div>';
